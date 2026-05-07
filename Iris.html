@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz 7° Aniversario 💖</title>
+<link rel="icon" type="image/png" href="Portada.png">
+<link rel="apple-touch-icon" href="Portada.png">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+
+  background:
+    radial-gradient(circle at 20% 30%, #ffd6f6 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, #cde7ff 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, #ffc9e3 0%, transparent 40%),
+    radial-gradient(circle at 30% 70%, #d6f0ff 0%, transparent 40%),
+    linear-gradient(135deg, #ffd6f6, #cde7ff, #ffc9e3, #d6f0ff);
+
+  background-size: 200% 200%;
+  animation: vitralFlow 15s ease infinite;
+}
+
+.hero h1{
+  animation: latido 2.5s infinite;
+}
+
+@keyframes latido{
+  0%{transform:scale(1);}
+  35%{transform:scale(1.1);}
+  50%{transform:scale(0.95);}
+  70%{transform:scale(1.08);}
+  100%{transform:scale(1);}
+}
+
+/* FONDO ANIMADO */
+#fondo-animado{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  overflow:hidden;
+
+  /* FONDO OSCURO */
+  background:
+    radial-gradient(circle at center,
+      rgba(25,25,35,1) 0%,
+      rgba(10,10,15,1) 70%,
+      #050507 100%);
+}
+
+/* SVG */
+#fondo-animado svg{
+  width:100%;
+  height:100%;
+}
+
+/* VITRALES */
+#fondo-animado polygon{
+
+  stroke:rgba(255,255,255,0.08);
+  stroke-width:0.35;
+
+  filter:
+    brightness(1.2)
+    drop-shadow(0 0 8px rgba(255,190,255,0.12))
+    drop-shadow(0 0 18px rgba(180,220,255,0.08));
+
+  transition:
+    fill 4s ease,
+    opacity 3s ease;
+}
+
+/* LUZ QUE ATRAVIESA */
+#fondo-animado::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at 20% 30%,
+      rgba(255,190,240,0.16),
+      transparent 25%),
+
+    radial-gradient(circle at 75% 20%,
+      rgba(180,220,255,0.14),
+      transparent 30%),
+
+    radial-gradient(circle at 60% 80%,
+      rgba(255,210,240,0.12),
+      transparent 30%);
+
+  mix-blend-mode:screen;
+
+  filter:blur(40px);
+
+  opacity:0.9;
+
+  animation:luzViva 8s ease-in-out infinite alternate;
+}
+
+/* SOMBRA OSCURA SUPERPUESTA */
+#fondo-animado::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.55)
+    );
+
+  pointer-events:none;
+}
+
+/* MOVIMIENTO DE LUZ */
+@keyframes luzViva{
+
+  from{
+    transform:translateY(-10px) scale(1);
+    opacity:0.7;
+  }
+
+  to{
+    transform:translateY(10px) scale(1.05);
+    opacity:1;
+  }
+}
+
+@keyframes brilloVitral{
+  from{
+    opacity:0.5;
+    transform:scale(1);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.05);
+  }
+}
+
+
+.forma{
+  position:absolute;
+  border-radius:50%;
+  opacity:0.15;
+  animation: flotarFondo linear infinite;
+}
+
+@keyframes flotarFondo{
+  0%{transform:translateY(100vh) translateX(0);}
+  50%{transform:translateY(50vh) translateX(30px);}
+  100%{transform:translateY(-10vh) translateX(-30px);}
+}
+
+@keyframes vidrio{
+  0%{background-position:0% 50%;}
+  25%{background-position:50% 100%;}
+  50%{background-position:100% 50%;}
+  75%{background-position:50% 0%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ✅ FIX: animación faltante */
+@keyframes vitralFlow{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 2px,
+      transparent 2px,
+      transparent 25px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 25px
+    );
+
+  pointer-events:none;
+}
+
+/* CARDS */
+.card{
+  background: #ffffff;
+  color: #333;
+  margin:30px auto;
+  padding:30px;
+  border-radius:25px;
+  max-width:900px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  transition:0.4s;
+}
+
+.poema{
+  white-space: pre-line;
+  line-height: 2;
+  font-size: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.card:hover{
+  transform:translateY(-5px) scale(1.02);
+}
+
+.timeline{
+  position:relative;
+  padding:80px 20px 40px;
+  border-radius:30px;
+  overflow:hidden;
+  background:#ffffff;
+  color:#333;
+  margin:30px auto;
+  max-width:900px;
+
+  display:flex;              /* 👈 AÑADE */
+  justify-content:space-between; /* 👈 AÑADE */
+  align-items:flex-start;    /* 👈 AÑADE */
+}
+
+.linea{
+  position:absolute;
+  top:40px;   /* 👈 SUBE/BAJA SEGÚN GUSTO */
+  left:5%;
+  width:90%;
+  height:6px;
+  background:#ff4d6d;
+  border-radius:10px;
+  z-index:0;
+}
+
+.evento{
+  background:rgba(255,255,255,0.9);
+  padding:15px;
+  border-radius:20px;
+  width:185px;              /* 👈 CONTROLA TAMAÑO */
+  backdrop-filter:blur(10px);
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+
+.evento::before{
+  content:"💖";
+  position:absolute;
+  top:-45px;
+  left:50%;
+  transform:translateX(-50%); /* 👈 CENTRADO REAL */
+  font-size:26px;
+}
+
+.evento h3{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.evento p{
+  font-size:14px;
+}
+
+/* GALERIA */
+.galeria{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
+
+.galeria img{
+  width:200px;
+  height:200px; /* ✅ FIX */
+  object-fit:cover; /* ✅ FIX */
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.galeria img:hover{
+  transform:scale(1.1);
+}
+
+.foto p{
+  font-size:14px;
+  font-style:italic;
+  margin-top:5px;
+}
+
+button{
+  background:#ff4d6d;
+  border:none;
+  padding:12px 25px;
+  border-radius:12px;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+.oculto{
+  opacity:0;
+  transform:translateY(50px);
+  transition:0.8s;
+}
+
+.mostrar{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.corazon{
+  position:fixed;
+  bottom:-20px;
+  pointer-events:none;
+  animation: flotar linear forwards;
+  will-change: transform;
+}
+
+@keyframes flotar{
+  0%{transform: translateY(0) translateX(0) rotate(0deg);opacity:1;}
+  100%{transform: translateY(-110vh) translateX(15px) rotate(5deg);opacity:0;}
+}
+.banda{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  margin:40px 0;
+  flex-wrap:wrap;
+}
+
+.banda img{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.banda img:hover{
+  transform:scale(1.05);
+}
+
+.info{
+  max-width:400px;
+  text-align:left;
+}
+
+.info h3{
+  margin-bottom:10px;
+}
+
+.info p{
+  margin:5px 0;
+}
+
+/* 👈 ESTA ES LA MAGIA */
+.reverse{
+  flex-direction:row-reverse;
+}
+@media(max-width:600px){
+  .banda{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .reverse{
+    flex-direction:column;
+  }
+
+  .info{
+    text-align:center;
+  }
+}
+.cosas{
+  margin-top:20px;
+  text-align:left;
+  display:inline-block;
+}
+
+.cosas p{
+  margin:8px 0;
+  font-size:16px;
+}
+
+.grid-regalos{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+  margin-top:30px;
+}
+
+.regalo{
+  text-align:center;
+}
+
+.regalo img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.regalo img:hover{
+  transform:scale(1.05);
+}
+
+.regalo p{
+  margin-top:10px;
+  font-size:15px;
+}
+
+/* 📱 CELULAR */
+@media(max-width:768px){
+  .grid-regalos{
+    grid-template-columns:1fr;
+  }
+}
+.futuro{
+  text-align:center;
+}
+
+.foto-futuro{
+  width:80%;
+  max-width:250px;
+  border-radius:25px;
+  margin:25px 0;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.frase{
+  font-size:22px;
+  line-height:1.8;
+  margin:25px auto;
+  max-width:700px;
+}
+
+.grande{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.suenos{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+
+.sueno{
+  background:rgba(255,255,255,0.15);
+  padding:20px;
+  border-radius:20px;
+  width:180px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.sueno:hover{
+  transform:translateY(-5px) scale(1.05);
+}
+
+.sueno h3{
+  font-size:35px;
+}
+
+.linea-futuro{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+
+.linea-futuro div{
+  background:#fff;
+  color:#333;
+  padding:20px;
+  border-radius:20px;
+  width:220px;
+}
+
+.linea-futuro span{
+  font-size:22px;
+  font-weight:bold;
+  color:#ff4d6d;
+}
+/* BLOQUE MUSICA */
+.musica{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+  margin:60px 0;
+  flex-wrap:wrap;
+  audio{
+  transition:0.3s;
+}
+
+}
+
+/* INVERTIR */
+.reverse{
+  flex-direction:row-reverse;
+}
+
+/* CONTENEDOR DISCO */
+.cover-container{
+  position:relative;
+}
+
+/* DISCO */
+.cover{
+  width:230px;
+  height:230px;
+  object-fit:cover;
+  border-radius:50%;
+  transition:0.4s;
+  box-shadow:
+    0 0 25px rgba(255,77,109,0.4),
+    0 10px 30px rgba(0,0,0,0.3);
+
+  position:relative;
+  animation:none;
+}
+
+/* AGUJERO CENTRAL */
+.cover-container{
+  position:relative;
+  width:230px;
+  height:230px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* CENTRO DEL VINILO */
+.cover-container::after{
+  content:"";
+  position:absolute;
+
+  width:35px;
+  height:35px;
+
+  background:#111;
+  border:6px solid #ddd;
+
+  border-radius:50%;
+
+  z-index:5;
+
+  box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+/* LINEAS DEL VINILO */
+.cover-container::before{
+  content:"";
+  position:absolute;
+
+  width:230px;
+  height:230px;
+
+  border-radius:50%;
+
+  background:
+  repeating-radial-gradient(
+    circle,
+    rgba(255,255,255,0.06) 0px,
+    rgba(255,255,255,0.06) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+
+  z-index:2;
+  pointer-events:none;
+}
+
+/* EFECTO HOVER */
+.cover:hover{
+  transform:scale(1.05);
+}
+
+/* GIRAR CUANDO SUENA */
+.playing{
+  animation:girar 5s linear infinite;
+  box-shadow:
+    0 0 20px rgba(255,77,109,0.7),
+    0 0 40px rgba(255,77,109,0.5);
+}
+
+/* ANIMACION */
+@keyframes girar{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* INFO */
+.info-musica{
+  max-width:420px;
+  text-align:left;
+}
+
+.info-musica h3{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.info-musica p{
+  font-size:18px;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+/* BOTON */
+.info-musica button{
+  background:#ff4d6d;
+  border:none;
+  padding:12px 24px;
+  border-radius:15px;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.info-musica button:hover{
+  transform:scale(1.08);
+  background:#ff2f57;
+}
+
+/* BARRA */
+.barra{
+  width:100%;
+  height:10px;
+  background:rgba(255,255,255,0.2);
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:18px;
+}
+
+/* PROGRESO */
+.progreso{
+  width:0%;
+  height:100%;
+  background:#ff4d6d;
+  transition:width 0.2s linear;
+}
+
+/* MURO */
+.muro{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:35px;
+  padding:30px;
+}
+
+/* POLAROID */
+.polaroid{
+  background:white;
+  padding:12px 12px 30px 12px;
+
+  width:220px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+  transition:0.4s;
+
+  position:relative;
+}
+
+/* FOTO */
+.polaroid img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+/* TEXTO */
+.polaroid p{
+  color:#333;
+  font-size:15px;
+  margin-top:12px;
+  font-style:italic;
+}
+
+/* HOVER */
+.polaroid:hover{
+  transform:scale(1.05) rotate(0deg) !important;
+  z-index:10;
+}
+
+/* ROTACIONES */
+.rot1{
+  transform:rotate(-4deg);
+}
+
+.rot2{
+  transform:rotate(3deg);
+}
+
+.rot3{
+  transform:rotate(-2deg);
+}
+
+.rot4{
+  transform:rotate(5deg);
+}
+
+.rot5{
+  transform:rotate(-5deg);
+}
+
+.rot6{
+  transform:rotate(2deg);
+}
+
+body{
+  background:#f7f2ea;
+}
+
+/* CONTENEDOR */
+.ruleta-container{
+  position:relative;
+  width:500px;
+  height:500px;
+  margin:30px auto;
+}
+@media(max-width:600px){
+
+  .ruleta-container{
+    width:320px;
+    height:320px;
+  }
+
+  #ruleta{
+    width:100%;
+    height:100%;
+  }
+
+}
+
+#ruleta{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:12px solid #222;
+  background:#111;
+  box-shadow:
+    0 0 30px rgba(255,255,255,0.2),
+    inset 0 0 20px rgba(255,255,255,0.15);
+}
+
+/* FLECHA */
+.flecha{
+  position:absolute;
+  top:-15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0;
+  height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  border-top:40px solid white;
+  z-index:10;
+
+  filter:drop-shadow(0 0 10px white);
+}
+
+#resultadoRuleta{
+  margin-top:20px;
+  font-size:24px;
+  font-weight:bold;
+  color:#ff4d6d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="fondo-animado"></div>
+
+<!-- ✅ FIX AUDIO -->
+<audio id="musica" loop>
+  <source src="musica1.mp3" type="audio/mpeg">
+</audio>
+
+<br>
+<button onclick="playMusic()">🎶 Nuestra canción</button>
+
+<!-- INICIO -->
+<section class="hero">
+  <h1>💖 Feliz 7° aniversario mi linda Iris 💖</h1>
+  <p>Estos meses contigo han sido lo mejor del mundo, gracias por enseñarme que el amor existe y que todos podemos ser amados 🥺</p>
+</section>
+
+ <!-- MUSEO -->
+  <section class="card oculto">
+  <h2>📸 Museo de tu belleza</h2>
+ <p>Para que te des cuenta lo hermosa que eres y lo hermosa que te veo siempre mi amor 🥺</p>
+   <div class="muro">
+
+  <div class="polaroid rot1">
+    <img src="foto (1).jpeg">
+    <p>Ay que guapa 💖</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (2).jpeg">
+    <p>Cada día más guapa y totalmente bella</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (3).jpeg">
+    <p>Toda una princesa</p>
+  </div>
+
+  <div class="polaroid rot4">
+    <img src="foto (4).jpeg">
+    <p>Que la belleza no es ilegal?</p>
+  </div>
+
+  <div class="polaroid rot5">
+    <img src="foto (5).jpeg">
+    <p>Aquí ya eras toda para mía 😳</p>
+  </div>
+
+  <div class="polaroid rot6">
+    <img src="foto (6).jpeg">
+    <p>Eres tan pero tan linda jeje</p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (7).jpeg">
+    <p>Tan linda mi niña preciosa</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (8).jpeg">
+    <p>Tan lindas las dos mi amorrrrr (no pienses que de forma rara)</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (9).jpeg">
+    <p>Cada día más guapa y totalmente bella</p>
+  </div>
+
+  <div class="polaroid rot4">
+    <img src="foto (10).jpeg">
+    <p>No entiendo cómo puedes ser tan linda 💘</p>
+  </div>
+
+  <div class="polaroid rot5">
+    <img src="foto (11).jpeg">
+    <p>Que la belleza no tiene nombre? y ella que?</p>
+  </div>
+
+  <div class="polaroid rot6">
+    <img src="foto (12).jpeg">
+    <p>Grr que guapa... NIña lindaaaa</p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (13).jpeg">
+    <p>Eres muy sexy bb jeje</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (14).jpeg">
+    <p>Tan linda aun que te enojes conmigo</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (15).jpeg">
+    <p>Estoy empezando a sospechar que no eres humana 😳</p>
+  </div>
+
+  <div class="polaroid rot4">
+    <img src="foto (16).jpeg">
+    <p>Confirmo: me enamoré otra vez</p>
+  </div>
+
+  <div class="polaroid rot5">
+    <img src="foto (17).jpeg">
+    <p>¿Modelo o qué? Porque esto ya es abuso</p>
+  </div>
+
+  <div class="polaroid rot6">
+    <img src="foto (18).jpeg">
+    <p>Hay mi Sexy conejita.. caando saltas en mi? jeje </p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (19).jpeg">
+    <p>Tu sonrisa es mi lugar favorito</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (20).jpeg">
+    <p>Así no se puede concentrar uno</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (21).jpeg">
+    <p>Bájale dos rayitas a la perfección pls</p>
+  </div>
+
+  <div class="polaroid rot4">
+    <img src="foto (22).jpeg">
+    <p>No sé si darte like o arrodillarme</p>
+  </div>
+
+  <div class="polaroid rot5">
+    <img src="foto (23).jpeg">
+    <p>No sé si comentar o quedarme admirando en silencio</p>
+  </div>
+
+  <div class="polaroid rot6">
+    <img src="foto (24).jpeg">
+    <p>Eres literalmente mi debilidad</p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (25).jpeg">
+    <p>¿Así o más perfecta hoy?</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (26).jpeg">
+    <p>Te ves tan bien que da hasta rabia no poder estar contigo 😤</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (27).jpeg">
+    <p>Explícame cómo haces para verte así SIEMPRE</p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (28).jpeg">
+    <p>Mi reacción honesta: wow</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (29).jpeg">
+    <p>Que lugar tan bonito.. como me gustaría estar ahí contigo</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (30).jpeg">
+    <p>Si la perfección tuviera cara, sería la tuya</p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (31).jpeg">
+    <p>Te ves demasiado bien… me preocupa 😩</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (32).jpeg">
+    <p>No sé si presumirte o esconderte 😏</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (33).jpeg">
+    <p>Cada foto tuya supera la anterior.</p>
+  </div>
+
+   <div class="polaroid rot1">
+    <img src="foto (34).jpeg">
+    <p>Esa mirada no es normal… haces que me den unas ganas bb 🔥</p>
+  </div>
+
+  <div class="polaroid rot2">
+    <img src="foto (35).jpeg">
+    <p>Después de verte así, portarme bien ya no es una opción</p>
+  </div>
+
+  <div class="polaroid rot3">
+    <img src="foto (36).jpeg">
+    <p>Esa foto pide que te diga cosas que no se dicen por aquí 😏</p>
+  </div>
+
+</div>
+
+<!-- POEMAS -->
+<section class="card oculto">
+  <h2>💌 Poemas para ti</h2>
+  <p class="poema">
+¡Oh, mi bella Iris, luz que resplandece!
+dime… ¿no te pesa acaso la dulzura de tu existencia?
+¿No eres tú, en secreto,
+el sol que abrasa y la luna que sosiega?
+
+Porque en tu sola presencia,
+mi alma se rinde sin defensa.
+
+Cuitas llevo en el pecho,
+por no saber decir lo que siento;
+palabras que se ahogan en silencio,
+gritos que nacen desde dentro…
+y aun así, por ti, quiero romper el viento
+y gritarle al mundo este amor inmenso.
+
+Mi amor por ti excede al fuego,
+ni la más viva llama de combustión se atreve
+a rozar siquiera
+la intensidad con la que mi corazón arde por ti.
+
+Y aunque el universo entero me negara voz,
+lo escribiría en el cielo,
+lo susurraría al tiempo,
+para que cada alma sepa
+que eres tú mi anhelo.
+
+La esencia de tu cuerpo me llama,
+como un suspiro que no se apaga;
+única eres, irrepetible y eterna,
+no hay reflejo en este mundo que te iguale.
+
+Y si lo hubiera…
+aun así, te elegiría a ti.
+
+Porque mi corazón te pertenece,
+hoy, mañana
+y cada instante que el destino me conceda.
+
+¡Oh, mi bello sol!
+quédate conmigo…
+hasta que el tiempo se rinda
+y no podamos más.</p>
+</section>
+
+<!-- BIO -->
+<section class="card oculto">
+  <h2>✨ Lo increíble que eres</h2>
+
+  <p>
+  Hay muchas cosas que te hacen increíble… pero no sabría por dónde empezar.
+  </p>
+
+  <div class="cosas">
+    <p>💖 El que seas siempre me apoyas y contigo me siento tan seguro de todo</p>
+    <p>💖 Tú dulzura, la forma en la que me miras y sonries</p>
+    <p>💖 Eres tan especial para mi mi amor (mientras escribo esto, esoty viendo como abrzas a tu herman)</p>
+  </div>
+
+  <p>
+  Pero si tuviera que resumirlo en algo…  
+  es que eres tú.
+
+  Y con eso basta.
+  </p>
+</section>
+
+<!-- RECUERDOS -->
+<section class="timeline">
+
+<div class="evento">
+    <h3>2022 nos conocimos</h3>
+    <p>El primer paso fue conocernos, es facil verdad? pues no es así y que suerte que pudieramos hacerlo entre Billones de personas  </p>
+  </div>
+<div class="evento">
+    <h3>16 de diciembre 2024</h3>
+    <p>Volví a escribirte mi amor.. y un; Hola, fue suficiente para conectar a dos almas otra vez.. </p>
+  </div>
+<div class="evento">
+    <h3>21 de septiembre 2025</h3>
+    <p>Ese día me dijiste: Me gustas… y todo explotó</p>
+  </div>
+<div class="evento">
+    <h3>2025 - ¿?</h3>
+    <p>Seguimos escribiendo nuestra historia</p>
+  </div>
+  
+<script>
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".evento").forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-50){
+      el.classList.add("visible");
+    }
+  });
+});
+</script>
+
+</section>
+
+<!-- TIEMPO -->
+<section class="card oculto">
+  <h2>🎡 Tiempo juntos</h2>
+
+  <div class="ruleta-container">
+
+    <div class="flecha"></div>
+
+    <canvas id="ruleta" width="500" height="500"></canvas>
+
+  </div>
+
+  <br>
+
+  <button onclick="girarRuleta()">
+    💖 Girar ruleta
+  </button>
+
+  <p id="resultadoRuleta"></p>
+</section>
+
+<!-- HISTORIA -->
+<section class="card oculto">
+  <h2>💑 Cómo nos hicimos novios</h2>
+  <p class="poema">
+A veces la vida no empieza con algo increíble, ni con una escena perfecta…
+a veces empieza con algo tan simple que ni le das importancia…
+un “hola”.
+Y así empezó todo contigo.
+Después de tantos años sin hablar, volví a escribirte.
+No tenía un plan, no sabía qué iba a pasar, ni siquiera esperaba que todo terminara así…
+solo sentí que tenía que hacerlo.
+Y tú respondiste.
+Un “hola” sencillo, tranquilo… casi como si fuéramos dos personas que no se conocen.
+Como si todo lo que alguna vez hubo, ya no existiera.
+Y aun así… algo se sentía distinto.
+Al inicio era normal, conversaciones simples, sin mucha profundidad…
+pero poco a poco eso fue cambiando.
+Empezaron los buenos días.
+Los “¿ya comiste?”
+Los “descansa”.
+Los mensajes que parecen pequeños… pero que cuando vienen de la persona correcta, pesan diferente.
+Y sin darme cuenta, ya estaba esperando hablar contigo.
+Ya no era por aburrimiento, ya no era por costumbre…
+era porque eras tú.
+Y entre todo eso, estaban los detalles.
+Los dibujos, las veces que hablábamos de cualquier cosa…
+literal, podíamos repetir conversaciones y aun así se sentían nuevas.
+Me reía contigo.
+Me sentía cómodo contigo.
+Me gustaba estar ahí… contigo.
+Y eso fue creciendo sin que me diera cuenta.
+Porque no hubo un momento exacto donde dije “ya me gusta”…
+solo pasó.
+Un día estaba hablando contigo como siempre…
+y al otro, ya no quería dejar de hacerlo.
+Y mientras todo eso pasaba conmigo… tú ya ibas mucho más adelante.
+Porque tú ya sentías algo desde hace años…
+y eso, no sé… lo hace todo más especial.
+Porque mientras yo estaba empezando a descubrirte otra vez,
+tú ya me habías elegido desde antes.
+Y entonces llegó esa noche…
+Esa noche que no se planea, que no se repite…
+esa noche donde todo cambia sin que te des cuenta.
+Sin aviso, sin rodeos…
+me dijiste lo que sentías.
+Así, directo. Valiente. Sin miedo.
+Querías algo más.
+Y yo… en ese momento entendí todo.
+Entendí por qué me gustaba hablar contigo.
+Por qué te buscaba tanto.
+Por qué me sentía así cuando estaba contigo.
+Y no lo dudé.
+Te seguí.
+Tomé tu mano…
+y desde ese momento, todo empezó de verdad.
+No fue perfecto.
+No fue como en las películas.
+No hubo música de fondo ni una escena armada.
+Pero fue real.
+Y eso vale mucho más.
+Porque desde ese momento, todo cambió.
+Ya no eras solo alguien con quien hablaba…
+eras alguien que quería en mi vida de verdad.
+Alguien con quien quería compartir mis días.
+Mis momentos.
+Mis tonterías.
+Todo.
+Y ahora, cuando miro atrás…
+todo empezó con algo tan simple que da risa…
+un “hola”.
+Pero no fue solo eso.
+Fue el inicio de mensajes que se volvieron importantes.
+De risas que se volvieron necesarias.
+De momentos que se volvieron recuerdos.
+Y de sentimientos… que se volvieron reales.
+Y ahora estamos aquí.
+Juntos.
+Después de todo, después del tiempo, después de todo lo que no pasó…
+terminamos pasando nosotros.
+Y no sé en qué momento exacto te volviste tan importante para mí…
+pero sí sé algo con total seguridad:
+No quiero volver a un mundo donde no estés tú.
+Porque si todo esto empezó con un “hola”…
+no me imagino hasta dónde podemos llegar si seguimos así.
+Juntos ❤️</p>
+</section>
+
+<!-- BANDAS -->
+<section class="card oculto">
+  <h2>🎧 Nuestras bandas favoritas</h2>
+
+  <!-- BLOQUE 1 -->
+  <div class="banda">
+    <img src="foto (37).jpg">
+    <div class="info">
+      <h3>Radiohead</h3>
+      <p>Mi banda fovorita 🎶</p>
+      <p>Me ha acompañado durante todos los años que la escucho 💕</p>
+    </div>
+  </div>
+
+  <!-- BLOQUE 2 -->
+  <div class="banda reverse">
+    <img src="foto (39).jpg">
+    <div class="info">
+      <h3>BTS</h3>
+      <p>Tú grupo favorito </p>
+      <p>Te ayudó cuando más lo necesitabas y ha sido lo mejor en tu vida 💖</p>
+    </div>
+  </div>
+
+   <!-- BLOQUE 3 -->
+  <div class="banda">
+    <img src="foto (40).jpg">
+    <div class="info">
+      <h3>Taylor Swift</h3>
+      <p>Pues no se mucho sobre que decir jeje 💖</p>
+      <p>Amas a Taylor y es lindo 🎶</p>
+    </div>
+  </div>
+
+   <!-- BLOQUE 4 -->
+  <div class="banda reverse">
+    <img src="foto (38).jpg">
+    <div class="info">
+      <h3>TWICE</h3>
+      <p>Es tan lidno y feliz</p>
+      <p>Siempre me sube el ánimo 💕</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- MUSICA IMPORTANCIA -->
+<section class="card oculto">
+  <h2>🎶 Nuestra música</h2>
+
+  <!-- CANCION 1 -->
+  <div class="musica">
+
+    <div class="cover-container">
+      <img src="foto (61).png" class="cover" id="cover1">
+    </div>
+
+    <div class="info-musica">
+
+      <h3>Present Tense</h3>
+
+      <p>
+        Me mantendre en movimiento..
+        no dejaré que la corrriente me arrastre
+        y lo haré para estar junto a ti
+        sin dejar que nada caiga 🥺
+      </p>
+
+      <button onclick="playPreview('song1','cover1')">
+        ▶ Escuchar fragmento
+      </button>
+
+      <!-- BARRA -->
+      <div class="barra">
+        <div class="progreso" id="progress1"></div>
+      </div>
+
+      <audio id="song1">
+        <source src="Present Tense.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </div>
+
+  <!-- CANCION 2 -->
+  <div class="musica reverse">
+
+    <div class="cover-container">
+      <img src="foto (62).jpg" class="cover" id="cover2">
+    </div>
+
+    <div class="info-musica">
+
+      <h3>True Love Waits</h3>
+
+      <p>
+        Contigo aprendí
+        que el amor real si..
+        EXISTE ✨
+      </p>
+
+      <button onclick="playPreview('song2','cover2')">
+        ▶ Escuchar fragmento
+      </button>
+
+      <!-- BARRA -->
+      <div class="barra">
+        <div class="progreso" id="progress2"></div>
+      </div>
+
+      <audio id="song2">
+        <source src="True.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </div>
+
+  <!-- CANCION 3 -->
+  <div class="musica">
+
+    <div class="cover-container">
+      <img src="foto (63).jpg" class="cover" id="cover3">
+    </div>
+
+    <div class="info-musica">
+
+      <h3>you</h3>
+
+      <p>
+        Eres como el sol..
+        tan brillante y grande 
+        Eres como la luna.. tan hermosa y cercana 💕
+      </p>
+
+      <button onclick="playPreview('song3','cover3')">
+        ▶ Escuchar fragmento
+      </button>
+
+      <!-- BARRA -->
+      <div class="barra">
+        <div class="progreso" id="progress3"></div>
+      </div>
+
+      <audio id="song3">
+        <source src="You.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </div>
+
+  <!-- CANCION 4 -->
+  <div class="musica reverse">
+
+    <div class="cover-container">
+      <img src="foto (64).png" class="cover" id="cover4">
+    </div>
+
+    <div class="info-musica">
+
+      <h3>Daylight</h3>
+
+      <p>
+        Dijeron que no debes dedicar está canción
+        pero llegaste tú y lo hiciste.. dejame hacer
+        que nunca te arrepientas de eso mi amor 💖
+      </p>
+
+      <button onclick="playPreview('song4','cover4')">
+        ▶ Escuchar fragmento
+      </button>
+
+      <!-- BARRA -->
+      <div class="barra">
+        <div class="progreso" id="progress4"></div>
+      </div>
+
+      <audio id="song4">
+        <source src="Daylight.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </div>
+
+  <!-- CANCION 5 -->
+  <div class="musica">
+
+    <div class="cover-container">
+      <img src="foto (65).jpg" class="cover" id="cover5">
+    </div>
+
+    <div class="info-musica">
+
+      <h3>si me esperas</h3>
+
+      <p>
+        Te esperaré todo el tiempo que haga falta
+        porque quiero que todo sea junto a ti 💘
+      </p>
+
+      <button onclick="playPreview('song5','cover5')">
+        ▶ Escuchar fragmento
+      </button>
+
+      <!-- BARRA -->
+      <div class="barra">
+        <div class="progreso" id="progress5"></div>
+      </div>
+
+      <audio id="song5">
+        <source src="si me esperas.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </div>
+
+  <!-- CANCION 6 -->
+  <div class="musica reverse">
+
+    <div class="cover-container">
+      <img src="foto (66).png" class="cover" id="cover6">
+    </div>
+
+    <div class="info-musica">
+
+      <h3>HOME</h3>
+
+      <p>
+        Esta canción es tan linda y me hace sentir tan feliz..
+        el titulo de la canción es como lo que siento contigo
+        eres mi hogar ❤️
+      </p>
+
+      <button onclick="playPreview('song6','cover6')">
+        ▶ Escuchar fragmento
+      </button>
+
+      <!-- BARRA -->
+      <div class="barra">
+        <div class="progreso" id="progress6"></div>
+      </div>
+
+      <audio id="song6">
+        <source src="HOME.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </div>
+</section>
+
+<section class="card oculto">
+  <h2>🎵 Lo que significa</h2>
+  <p class="poema">
+    La música es de las mejores cosas que existen… y sinceramente no sé cómo viviría sin ella.
+
+Porque hay canciones que te entienden incluso cuando tú no entiendes lo que sientes.
+Hay canciones que llegan justo cuando estás mal, cuando estás feliz, cuando extrañas a alguien o cuando amas tanto que ya ni sabes cómo explicarlo.
+
+Y eso es lo increíble.
+
+Que una simple melodía pueda hacerte recordar personas, momentos, noches enteras, conversaciones… hasta sentimientos que creías olvidados.
+
+La música acompaña.
+La música abraza.
+La música salva.
+
+Y contigo entendí algo aún más bonito:
+que las canciones ya no solo suenan diferente…
+ahora tienen tu cara.
+
+Porque cada letra romántica me recuerda a ti.
+Cada canción triste me hace pensar en abrazarte.
+Y cada canción feliz… me hace imaginar una vida contigo 💖
+
+A veces siento que amar también es eso:
+encontrar a alguien con quien compartir canciones,
+alguien que escuche algo y piense automáticamente en ti.
+
+Y sinceramente…
+si algún día me preguntan por qué amo tanto la música,
+creo que respondería esto:
+
+Porque la música me acompañó toda mi vida…
+pero tú hiciste que se sintiera aún más hermosa ❤️
+💖</p>
+</section>
+
+<!-- FUTURO -->
+ <section class="card oculto futuro">
+
+  <h2>🔮 Nuestro futuro</h2>
+
+  <img src="foto (60).png" class="foto-futuro">
+
+    <p class="poema">
+No sé cómo será el futuro…
+pero si estás tú, entonces quiero vivirlo todo 💖
+
+Quiero más llamadas hasta quedarnos dormidos.
+Más mensajes diarios a la hora que sea.
+Más fotos tuyas que me dejen sin palabras.
+Más momentos donde piense:
+“carajo… qué suerte tengo de tenerte” 💘
+
+Quiero verte cumplir tus sueños.
+Estar contigo en tus peores días.
+Abrazarte cuando sientas que no puedes más.
+Y también reír contigo hasta que nos duela el estómago ❤️
+
+Quiero una vida donde sigamos eligiéndonos.
+Aunque pasen los años.
+Aunque todo cambie.
+
+Porque sinceramente…
+lo que imagino es ese futuro junto a nuestros hijos.
+
+Y si algún día todo esto empezó con un “hola”…
+entonces espero que nunca exista un “adiós”. 💞
+
+Quiero seguir creando recuerdos contigo,
+seguir enamorándome de ti,
+seguir viendo esos ojitos hermosos
+como si fuera la primera vez 💖
+
+Tú eres esa persona con la que quiero todo:
+las noches tranquilas,
+las locuras,
+los planes,
+las llamadas,
+las canciones,
+los abrazos al corazón.. y un día uno físico y totalmente lleno de amor,
+y cada pequeño momento que haga sentir la vida bonita 💘
+
+Y aunque el futuro dé miedo a veces…
+si es contigo,
+yo lo quiero completo ❤️
+  </p>
+
+  <div class="suenos">
+
+    <div class="sueno">
+      <h3>🏡</h3>
+      <p>Vivir y mudarnos juntos algún día</p>
+    </div>
+
+    <div class="sueno">
+      <h3>🎶</h3>
+      <p>Ir a los conciertos de nuestros grupos o artistas favoritos como una pareja </p>
+    </div>
+
+    <div class="sueno">
+      <h3>✈️</h3>
+      <p>Viajar y crear recuerdos solo tú y yo... y un día crear recuerdos con nuestros pqueños (claro solo si tú quieres amor) </p>
+    </div>
+
+  </div>
+
+  <img src="foto (59).png" class="foto-futuro">
+
+  <p class="frase grande">
+    Quiero seguir enamorándome de ti
+    incluso cuando pasen los años ❤️
+  </p>
+
+  <div class="linea-futuro">
+
+    <div>
+      <span>2026 💘</span>
+      <p>Más recuerdos juntos y momentos que recordaremos siempre, quizá aveces no sea como una fantasía, pero juntos estaremos listos para afrontar lo que pase</p>
+    </div>
+
+    <div>
+      <span>2030 ❤️</span>
+      <p>Más cerca de todo lo que soñamos.. y seguiremos siendo, Tú y yo.. Yo y tú</p>
+    </div>
+
+    <div>
+      <span>∞ 💍</span>
+      <p>Para toda la vida amor.. mi amor </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REGALOS -->
+<section class="card oculto regalos">
+  <h2>🎁 Algunos de los regalos que me diste mi amor</h2>
+  <p>Aqui como puedes ver, hay cosas tan lindas y sabes?.. Tú las hiciste mi amor, cada detalle tuyo es muy lindo y lo aprecio mucho 💖</p>
+
+  <div class="grid-regalos">
+
+    <div class="regalo">
+      <img src="foto (41).jpeg">
+      <p>Fue tan lindo cuando me enseñaste por primera vez estos muñequitos de nosotros y me gustaron mucho mi amor 🥺</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (42).jpeg">
+      <p>cuando me pediste que fuera tu san valentin.. AAAHHH, no sabía que se pedía y me disculpo por eso mi amor 💘</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (43).jpeg">
+      <p>Son bellas las flores y los dibujos.. tu hiciste ambas y wow mi amor 💖</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (44).jpeg">
+      <p>Uno de mis favoritos 😭</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (45).jpeg">
+      <p>Gracias por siempre pensar en mí 💕</p>
+    </div>
+
+      <div class="regalo">
+      <img src="foto (46).jpeg">
+      <p>Hiciste que mis pensamientos solo hablaran de un tema.. y ese eras tú mi amor 💖</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (47).jpeg">
+      <p>Uno de mis favoritos 😭</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (48).jpeg">
+      <p>Gracias por siempre pensar en mí 💕</p>
+    </div>
+
+       <div class="regalo">
+      <img src="foto (49).jpeg">
+      <p>Literalmente pensé en ti todo el día 💖</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (50).jpeg">
+      <p>Te amo mi amor.. siempre eres tan bella</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (51).jpeg">
+      <p>Gracias por siempre llevarme contigo mi niña</p>
+    </div>
+
+      <div class="regalo">
+      <img src="foto (52).jpeg">
+      <p>I love you forever.. (Love-Love) 💖</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (53).jpeg">
+      <p>Me ecantan tus dibujos y detalles mi niña hermosa </p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (54).jpeg">
+      <p>Cada dís se siente como si fueramos dos almas en un mar inmenso donde nadamos y bailamos juntos 💕</p>
+    </div>
+
+      <div class="regalo">
+      <img src="foto (55).jpeg">
+      <p>Caundo lo hiciste no dejaba de verlo.. ni cuando hacía tarea 💖</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (56).jpeg">
+      <p>Que rico ven y dejame así bb... 😩</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (57).png">
+      <p>¿Piensas que estamos juntos en cada universo? La respuesta es SI y siempre será un SI</p>
+    </div>
+
+    <div class="regalo">
+      <img src="foto (58).png">
+      <p>Te amo demsaiado mi amor, porfavor ya leeme otra carta 🥺</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- JUEGO -->
+<section class="card oculto">
+  <h2>🎮 Jueguito</h2>
+  <p>¿Quién dijo te amo primero?</p>
+  <input id="respuesta">
+  <br><br>
+  <button onclick="verificar()">Responder</button>
+  <p id="premio" style="display:none;">🎁 Ganaste poder preguntarme lo que tú quieras y no podré negarme ni mentir💖</p>
+</section>
+
+<!-- CORAZONES -->
+<section>
+  <button onclick="crearCorazones()">💖 Tócalo si me amas</button>
+</section>
+
+<script>
+  function playMusic(){
+  const audio = document.getElementById("musica");
+  audio.play().catch(()=> alert("Toca otra vez 😳"));
+}
+
+function verificar(){
+  let r=document.getElementById("respuesta").value.toLowerCase();
+  if(r==="yo"){
+    document.getElementById("premio").style.display="block";
+  } else{
+    alert("Intenta otra vez 😳");
+  }
+}
+
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".oculto").forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add("mostrar");
+    }
+  });
+});
+
+<!-- corazones -->
+function crearCorazones(cantidad = 35){
+  let emojis=["💖","💘","💕","💝"];
+
+  for(let i=0;i<cantidad;i++){
+    let c=document.createElement("div");
+    c.className="corazon";
+    c.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+    c.style.left=Math.random()*95+"vw";
+    c.style.fontSize=(Math.random()*60+40)+"px";
+    c.style.animationDuration=(Math.random()*2+3)+"s";
+    c.style.animationDelay=(Math.random()*0.5)+"s";
+
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+
+function generarVitral(){
+
+  const cont =
+    document.getElementById("fondo-animado");
+
+  cont.innerHTML = "";
+
+  const svg =
+    document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg"
+    );
+
+  svg.setAttribute("viewBox","0 0 100 100");
+  svg.setAttribute("preserveAspectRatio","none");
+
+  /* COLORES OSCUROS PASTEL */
+  const colores = [
+
+    "#ffb3dc",
+    "#ffc2e2",
+    "#ffd9f0",
+
+    "#b8e3ff",
+    "#cbeaff",
+    "#dff4ff",
+
+    "#f6d2ff",
+    "#d6e7ff"
+  ];
+
+  for(let i=0;i<90;i++){
+
+    const poly =
+      document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "polygon"
+      );
+
+    let puntos = "";
+
+    const lados =
+      Math.floor(Math.random()*3)+4;
+
+    const centroX =
+      Math.random()*100;
+
+    const centroY =
+      Math.random()*100;
+
+    const tamaño =
+      Math.random()*10+4;
+
+    for(let j=0;j<lados;j++){
+
+      const angulo =
+        (Math.PI*2/lados)*j;
+
+      const variacion =
+        Math.random()*4;
+
+      const x =
+        centroX +
+        Math.cos(angulo)*
+        (tamaño+variacion);
+
+      const y =
+        centroY +
+        Math.sin(angulo)*
+        (tamaño+variacion);
+
+      puntos += `${x},${y} `;
+    }
+
+    poly.setAttribute("points", puntos);
+
+    poly.setAttribute(
+      "fill",
+      colores[
+        Math.floor(
+          Math.random()*colores.length
+        )
+      ]
+    );
+
+    /* TRANSPARENCIA REALISTA */
+    poly.setAttribute(
+      "fill-opacity",
+      Math.random()*0.45 + 0.28
+    );
+
+    svg.appendChild(poly);
+  }
+
+  cont.appendChild(svg);
+}
+
+generarVitral();
+window.addEventListener("resize", generarVitral);
+
+function playPreview(audioId, coverId){
+
+  const audio = document.getElementById(audioId);
+  const cover = document.getElementById(coverId);
+
+  // 🎶 MUSICA PRINCIPAL
+  const musicaPrincipal =
+    document.getElementById("musica");
+
+  // GUARDAR TIEMPO ACTUAL
+  const tiempoPrincipal =
+    musicaPrincipal.currentTime;
+
+  // PAUSAR MUSICA PRINCIPAL
+  musicaPrincipal.pause();
+
+  // PAUSAR OTRAS PREVIEWS
+  document.querySelectorAll('[id^="song"]').forEach(a=>{
+
+    if(a !== audio){
+      a.pause();
+      a.currentTime = 0;
+    }
+
+  });
+
+  // QUITAR EFECTOS
+  document.querySelectorAll(".cover").forEach(img=>{
+    img.classList.remove("playing");
+  });
+
+  // REINICIAR PREVIEW
+  audio.currentTime = 0;
+
+  // REPRODUCIR PREVIEW
+  audio.play();
+
+  // EFECTO VINILO
+  cover.classList.add("playing");
+
+  // BARRA
+  const numero = audioId.replace("song","");
+  const progress =
+    document.getElementById("progress"+numero);
+
+  audio.ontimeupdate = ()=>{
+
+    let porcentaje =
+      (audio.currentTime / 15) * 100;
+
+    progress.style.width =
+      porcentaje + "%";
+  };
+
+  // DETENER A LOS 15 SEGUNDOS
+  setTimeout(()=>{
+
+    audio.pause();
+
+    cover.classList.remove("playing");
+
+    progress.style.width = "0%";
+
+    // 🎶 VOLVER A LA PRINCIPAL
+    musicaPrincipal.currentTime =
+      tiempoPrincipal;
+
+    musicaPrincipal.play();
+
+  },15000);
+
+  audio.onended = ()=>{
+
+    cover.classList.remove("playing");
+
+    progress.style.width = "0%";
+
+    musicaPrincipal.currentTime =
+      tiempoPrincipal;
+
+    musicaPrincipal.play();
+  };
+
+}
+
+ //---<RULETA>----
+const canvas = document.getElementById("ruleta");
+const ctx = canvas.getContext("2d");
+
+const opciones = [
+  "💖 Tiempo juntos",
+  "🥺 Darnos amor",
+  "💘 Tiempo juntos",
+  "💞 Tiempo juntos",
+  "😳 Darnos amor",
+  "💕 Tiempo juntos",
+  "🔥 Darnos amor"
+];
+
+const colores = [
+  "#ffd6f6",
+  "#cde7ff"
+];
+
+let anguloActual = 0;
+let girando = false;
+
+function dibujarRuleta(){
+
+  const total = opciones.length;
+  const angulo = (Math.PI * 2) / total;
+
+  ctx.clearRect(0,0,500,500);
+
+  for(let i=0;i<total;i++){
+
+    const inicio = i * angulo;
+    const fin = inicio + angulo;
+
+    /* TRIANGULO */
+    ctx.beginPath();
+    ctx.moveTo(250,250);
+
+    ctx.arc(
+      250,
+      250,
+      240,
+      inicio,
+      fin
+    );
+
+    ctx.fillStyle = colores[i % 2];
+    ctx.fill();
+
+    /* TEXTO */
+    ctx.save();
+
+    ctx.translate(250,250);
+
+    ctx.rotate(inicio + angulo/2);
+
+    ctx.textAlign = "right";
+
+    ctx.fillStyle = "#222";
+
+    ctx.font = "bold 20px Segoe UI";
+
+    ctx.fillText(
+      opciones[i],
+      200,
+      10
+    );
+
+    ctx.restore();
+  }
+
+  /* CENTRO */
+  ctx.beginPath();
+  ctx.arc(250,250,55,0,Math.PI*2);
+
+  const grad = ctx.createRadialGradient(
+    250,250,5,
+    250,250,55
+  );
+
+  grad.addColorStop(0,"#ffffff");
+  grad.addColorStop(1,"#ffd6f6");
+
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  ctx.font = "45px serif";
+  ctx.textAlign = "center";
+  ctx.fillText("💞",250,265);
+}
+
+dibujarRuleta();
+
+function girarRuleta(){
+
+  if(girando) return;
+
+  girando = true;
+
+  const giroExtra = Math.floor(Math.random()*360);
+
+  const rotacion =
+    3600 + giroExtra;
+
+  anguloActual += rotacion;
+
+  canvas.style.transition =
+    "transform 5s cubic-bezier(0.17,0.67,0.12,0.99)";
+
+  canvas.style.transform =
+    `rotate(${anguloActual}deg)`;
+
+  setTimeout(()=>{
+
+    const grados =
+      anguloActual % 360;
+
+    const total = opciones.length;
+
+    const sector =
+      360 / total;
+
+    const indice =
+      Math.floor(
+        ((360 - grados + 90) % 360)
+        / sector
+      );
+
+    girando = false;
+
+  },5000);
+}
+
+</script>
+
+</body>
+</html>
+
